@@ -1,0 +1,352 @@
+
+{"$schema": "http://json-schema.org/draft-07/schema#",
+"title": "Invoice Information Extractor",
+"description": "Schema for extracting complete invoice information including Items, taxes, payment methods, due dates, customer and supplier details, and invoice totals.",
+"type": "object",
+"properties": {
+  "Items": {
+    "title": "Items",
+    "description": "Details of the items in the invoice.",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "Date": {
+          "title": "Date",
+          "description": "Date of the item.",
+          "type": "string",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "Description": {
+          "title": "Description",
+          "description": "Description of the item.",
+          "type": "string",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "Quantity": {
+          "title": "Quantity",
+          "description": "Quantity of the item.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "UnitPrice": {
+          "title": "Unit Price",
+          "description": "Unit price of the item.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "Discount": {
+          "title": "Discount",
+          "description": "Discount applied to the item.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "Tax": {
+          "title": "Tax",
+          "description": "Tax applied to the item.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "LineTotal": {
+          "title": "Line Total",
+          "description": "Total amount for the item line.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Taxes": {
+    "title": "Taxes",
+    "description": "Details of taxes in the invoice.",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "title": "Type",
+          "description": "Type of tax.",
+          "type": "string",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "Percentage": {
+          "title": "Percentage",
+          "description": "Percentage of the tax.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        },
+        "Amount": {
+          "title": "Amount",
+          "description": "Amount of the tax.",
+          "type": "number",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "PaymentMethods": {
+    "title": "Payment Methods",
+    "description": "Details of payment methods used.",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "PaymentMethod": {
+          "title": "Payment Method",
+          "description": "Payment method used.",
+          "type": "string",
+          "properties": {
+            "ConfidenceScore": {
+              "title": "Confidence Score",
+              "description": "Confidence score for the extracted information.",
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "DueDates": {
+    "title": "Due Dates",
+    "description": "Due dates for payment.",
+    "type": "string",
+    "properties": {
+      "ConfidenceScore": {
+        "title": "Confidence Score",
+        "description": "Confidence score for the extracted information.",
+        "type": "number"
+      }
+    }
+  },
+  "CustomerDetails": {
+    "title": "Customer Details",
+    "description": "Details of the customer.",
+    "type": "object",
+    "properties": {
+      "Name": {
+        "title": "Name",
+        "description": "Name of the customer.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "Address": {
+        "title": "Address",
+        "description": "Address of the customer.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "VAT": {
+        "title": "Vat",
+        "description": "Customer VAT.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "Contact": {
+        "title": "Contact",
+        "description": "Contact information of the customer.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "SupplierDetails": {
+    "title": "Supplier Details",
+    "description": "Details of the supplier.",
+    "type": "object",
+    "properties": {
+      "Name": {
+        "title": "Name",
+        "description": "Name of the supplier.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "VAT": {
+        "title": "Vat",
+        "description": "supplier VAT.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "Address": {
+        "title": "Address",
+        "description": "Address of the supplier.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "Contact": {
+        "title": "Contact",
+        "description": "Contact information of the supplier.",
+        "type": "string",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "InvoiceTotals": {
+    "title": "Invoice Totals",
+    "description": "Total amounts in the invoice.",
+    "type": "object",
+    "properties": {
+      "Subtotal": {
+        "title": "Subtotal",
+        "description": "Subtotal amount of the invoice.",
+        "type": "number",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "TaxTotal": {
+        "title": "Tax Total",
+        "description": "Total tax amount in the invoice.",
+        "type": "number",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "DiscountTotal": {
+        "title": "Discount Total",
+        "description": "Total discount amount in the invoice.",
+        "type": "number",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      },
+      "GrandTotal": {
+        "title": "Grand Total",
+        "description": "Grand total amount of the invoice.",
+        "type": "number",
+        "properties": {
+          "ConfidenceScore": {
+            "title": "Confidence Score",
+            "description": "Confidence score for the extracted information.",
+            "type": "number"
+          }
+        }
+      }
+    }
+  },
+  "ConfidenceScore": {
+    "title": "Confidence Score",
+    "description": "Confidence score for the extracted information.",
+    "type": "number"
+  }
+}
+}

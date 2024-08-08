@@ -32,7 +32,7 @@ services:
     environment:
       - PG_HOST=postgres
         # Define CORS origins for dev work on UI
-      - CORS_ORIGINS=http://localhost:3000
+      - CORS_ORIGINS=http://localhost:4000
     ports:
       - "8000:8000" # Backend is accessible on localhost:8100
     depends_on:
@@ -46,7 +46,7 @@ services:
       dockerfile: ./Dockerfile
       target: development
     ports:
-      - "3000:3000"
+      - "4000:3000"
     environment:
       - NODE_ENV=development
     volumes:
